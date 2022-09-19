@@ -1,0 +1,107 @@
+{
+  "publisher": "cpreston321",
+  "name": "nuxt",
+  "icon": "icon.svg",
+  "displayName": "Nuxt.js Extension (un-official)",
+  "description": "Making Nuxt development way easier with VS Code by extending `nuxi` commands.",
+  "version": "0.0.1",
+  "main": "./dist/index.js",
+  "engines": {
+    "vscode": "^1.71.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "workspaceContains:**/nuxt.config.*",
+    "workspaceContains:**/package.json"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "title": "Nuxt: Add Component",
+        "command": "nuxt.addComponent"
+      },
+      {
+        "title": "Nuxt: Add Composable",
+        "command": "nuxt.addComposable"
+      },
+      {
+        "title": "Nuxt: Add Layout",
+        "command": "nuxt.addLayout"
+      },
+      {
+        "title": "Nuxt: Add Plugin",
+        "command": "nuxt.addPlugin"
+      },
+      {
+        "title": "Nuxt: Add Middleware",
+        "command": "nuxt.addMiddleware"
+      },
+      {
+        "title": "Nuxt: Add API Endpoint",
+        "command": "nuxt.addApi"
+      },
+      {
+        "title": "Nuxt: Add Page",
+        "command": "nuxt.addPage"
+      },
+      {
+        "title": "Nuxt: Upgrade Latest Version",
+        "command": "nuxt.upgrade"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "explorerResourceIsFolder && resourceFilename == 'components'",
+          "command": "nuxt.addComponent",
+          "group": "navigation"
+        },
+        {
+          "when": "explorerResourceIsFolder && resourceFilename == 'layout'",
+          "command": "nuxt.addLayout",
+          "group": "navigation"
+        },
+        {
+          "when": "explorerResourceIsFolder && resourceFilename == 'plugins'",
+          "command": "nuxt.addPlugin",
+          "group": "navigation"
+        },
+        {
+          "when": "explorerResourceIsFolder && resourceFilename == 'composables'",
+          "command": "nuxt.addComposable",
+          "group": "navigation"
+        },
+        {
+          "when": "explorerResourceIsFolder && resourceFilename == 'pages'",
+          "command": "nuxt.addPage",
+          "group": "navigation"
+        },
+        {
+          "when": "explorerResourceIsFolder && resourceFilename == 'middleware'",
+          "command": "nuxt.addMiddleware",
+          "group": "navigation"
+        },
+        {
+          "when": "explorerResourceIsFolder && resourceFilename == 'api' || resourceFilename == 'server'",
+          "command": "nuxt.addApi",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch src",
+    "publish": "esno ./scripts/publish.ts"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.71.0",
+    "esno": "^0.16.3",
+    "execa": "^6.1.0",
+    "jiti": "^1.16.0",
+    "prettier": "^2.7.1",
+    "tsup": "^6.2.3"
+  }
+}
