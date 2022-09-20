@@ -94,8 +94,9 @@ Contributions are what make the open source community such an amazing place to b
 
 ## Credits
 
-[`nuxi`](https://v3.nuxtjs.org/api/commands/add/) is developed by [@nuxt](https://github.com/nuxt).
-[`README.md Inspiration`](https://github.com/zernonia) by [@zernonia](https://github.com/zernonia)
+[`nuxi`](https://v3.nuxtjs.org/api/commands/add/) is developed by [@nuxt](https://github.com/nuxt)
+
+[`README Inspiration`](https://github.com/zernonia) by [@zernonia](https://github.com/zernonia)
 
 ## 📜 License
 
