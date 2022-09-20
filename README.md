@@ -55,6 +55,25 @@ Install Nuxi CLI Globally
 npm i -g nuxi
 ```
 
+## Features
+
+A command pallet of commands to run in addition to adding to the `explorer` context menu for the certain folders that drive the commands.
+
+![command pallet](./preview/command-pallet.png)
+
+![context menu](./preview/context-menu.png)
+
+---
+
+- [x] `Nuxt: Add Component` - Add a component to your project
+- [x] `Nuxt: Add Composable` - Add a composable to your project
+- [x] `Nuxt: Add Layout` - Add a custom layout to your project.
+- [x] `Nuxt: Add Plugin` - Add a plugin to the project
+- [x] `Nuxt: Add Middleware` - Add custom middleware to the project.
+- [x] `Nuxt: Add API Endpoint` - Adds a API endpoint to your project
+- [x] `Nuxt: Add Page` - Adds a page to your project
+- [x] `Nuxt: Upgrade Latest Version` - Upgrade to the latest version of Nuxt
+
 ## 💻 Development
 
 - Clone this repository
