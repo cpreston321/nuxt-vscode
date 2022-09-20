@@ -79,7 +79,8 @@ A command pallet of commands to run in addition to adding to the `explorer` cont
 - Clone this repository
 - Enable [Corepack](https://github.com/nodejs/corepack) using `corepack enable`
 - Install dependencies using `pnpm install`
-- Open playground with `pnpm dev`
+- Run `dev` watcher with `pnpm dev`
+- Run extension in debug mode by pressing `F5` or `Ctrl + Shift + D`
 
 ## ➕ Contributing
 
