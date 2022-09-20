@@ -20,7 +20,7 @@
 </div> -->
 <img width="100%" src="./preview/cover.png" alt="Cover Image">
 
-<h1 align="center">nuxt-vscode (un-official)</h1>
+<h1 align="center">(un-official) nuxt-vscode</h1>
 
 <p align="center">
   This uses <a href="https://v3.nuxtjs.org/api/commands/add/" target="_blank">nuxi</a> but makes it interactive and easy to use with a nuxt 3 project.
