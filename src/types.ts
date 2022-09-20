@@ -23,7 +23,7 @@ export type NuxiApiMethods = typeof nuxiApiMethods[number];
 
 export interface NuxiAddCommand {
   name: NuxiAddNames;
-  input: string;
+  input: string | undefined;
   execaArgs?: string[];
 }
 

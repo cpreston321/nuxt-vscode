@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { name } from "../../package.json";
+import { commandName } from "../../package.json";
 
 import type { Disposable, ExtensionContext } from "vscode";
 
@@ -54,7 +54,7 @@ export const defineCommand = (
   cb: (...args: any[]) => any
 ): Disposable => {
   return vscode.commands.registerCommand(
-    `${name}.${command}`,
+    `${commandName}.${command}`,
     async () =>
       await cb({
         name: command.replace("add", "").toLowerCase(),

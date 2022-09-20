@@ -21,6 +21,10 @@ export const useNuxiAddCommandInput = async ({
   execaArgs = [],
 }: NuxiAddCommand) => {
   try {
+    if (!input) {
+      return;
+    }
+
     const { stdout } = await useNuxiCommand({
       name: "add",
       execaArgs: [name, `${input}`, ...execaArgs],
@@ -38,7 +42,7 @@ export const useNuxiAddCommandInput = async ({
       }, 1000);
 
       vscode.window.showInformationMessage(
-        `Nuxt: added ${name} "${input}" successfully!`
+        `Nuxt: Added ${name} "${input}" successfully!`
       );
     }
   } catch (error: any) {

@@ -1,71 +1,91 @@
-# nuxt-vscode README
+<!-- <div
+	class="relative bg-gradient-to-r from-[#255461] to-[#00DC82] h-full font-open-sans bg-cover bg-center p-2"
+>
+	<div class="bg-white bg-opacity-90 rounded-md shadow-lg h-full p-7 flex flex-col justify-between">
+        <div>
+          <img :src="mainLogo" class="w-10"/>
+    	  <h1 class="text-4xl font-bold line-clamp-3 pb-1">{{ title }}</h1>
+          <p class="text-gray-700 italic">(un-official)</p>
+        </div>
+		<div class="mt-3 flex items-center justify-between">
+			<div class="flex items-center space-x-2 text-lg">
+				<img class="w-10 h-10 rounded-full" crossorigin="anonymous" :src="avatar" />
+				<span class="font-semibold">{{ author }}</span>
+			</div>
+			<div>
+				<img :src="logo" alt="logo" class="h-12" />
+			</div>
+		</div>
+	</div>
+</div> -->
+<img width="100%" src="./preview/cover.png" alt="Cover Image">
 
-This is the README for your extension "nuxt-vscode". After writing up a brief description, we recommend including the following sections.
+<h1 align="center">nuxt-vscode (un-official)</h1>
+
+<p align="center">
+  This uses <a href="https://v3.nuxtjs.org/api/commands/add/" target="_blank">nuxi</a> but makes it interactive and easy to use with a nuxt 3 project.
+</p>
+
+<p align="center">
+  <a href="https://marketplace.visualstudio.com/items?itemName=cpreston321.nuxt-vscode#review-details">
+    <img src="https://vsmarketplacebadge.apphb.com/rating-star/cpreston321.nuxt-vscode.svg?style=for-the-badge&colorA=FBBD30&colorB=F2AA08"/>
+  </a> 
+  <a href="https://marketplace.visualstudio.com/items?itemName=cpreston321.nuxt-vscode">
+    <img src="https://vsmarketplacebadge.apphb.com/downloads-short/cpreston321.nuxt-vscode.svg?style=for-the-badge&colorA=5DDB61&colorB=4BC74F&label=DOWNLOADS"/>
+  </a>
+</p>
+
+> Nuxi commands for vscode. This extension is not affiliated with Nuxt.js.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- 📖 Open Source
+- 🚀 Built for [Nuxt 3](https://v3.nuxtjs.org) Project
+- ✨ Nuxi built into **VS Code**.
+- Full Typescript Support
 
-For example if there is an image subfolder under your extension project workspace:
+## Prerequisites
 
-\!\[feature X\]\(images/feature-x.png\)
+- [VS Code](https://code.visualstudio.com/) `v1.71.0 or greater`
+- [Nuxi CLI](https://v3.nuxtjs.org/api/commands/add/) `latest`
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+Install Nuxi CLI Globally
 
-## Requirements
+```bash
+npm i -g nuxi
+```
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## 💻 Development
 
-## Extension Settings
+- Clone this repository
+- Enable [Corepack](https://github.com/nodejs/corepack) using `corepack enable`
+- Install dependencies using `pnpm install`
+- Open playground with `pnpm dev`
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## ➕ Contributing
 
-For example:
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-This extension contributes the following settings:
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+## Credits
 
-## Known Issues
+[`nuxi`](https://v3.nuxtjs.org/api/commands/add/) is developed by [@nuxt](https://github.com/nuxt).
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+## 📜 License
 
-## Release Notes
+[MIT](./LICENSE) License © 2022 [cpreston321](https://github.com/cpreston321)
 
-Users appreciate release notes as you update your extension.
+# 📧 Contact
 
-### 1.0.0
+cpreston321 - [@cpreston321](https://twitter.com/cpreston321)
 
-Initial release of ...
+Also, if you like my work, please feel free to [buy me a coffee](https://www.buymeacoffee.com/cpreston321) ☕️
 
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+<a href="https://www.buymeacoffee.com/cpreston321" target="_blank">
+  <img src="https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png" alt="Logo" >
+</a>
