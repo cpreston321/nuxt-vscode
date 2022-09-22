@@ -1,18 +1,26 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@types/node': ^18.7.18
   '@types/vscode': ^1.71.0
+  defu: ^6.1.0
+  destr: ^1.1.1
   esno: ^0.16.3
   execa: ^6.1.0
   jiti: ^1.16.0
+  pathe: ^0.3.8
   prettier: ^2.7.1
   tsup: ^6.2.3
 
 devDependencies:
+  '@types/node': registry.npmjs.org/@types/node/18.7.18
   '@types/vscode': registry.npmjs.org/@types/vscode/1.71.0
+  defu: registry.npmjs.org/defu/6.1.0
+  destr: registry.npmjs.org/destr/1.1.1
   esno: registry.npmjs.org/esno/0.16.3
   execa: registry.npmjs.org/execa/6.1.0
   jiti: registry.npmjs.org/jiti/1.16.0
+  pathe: registry.npmjs.org/pathe/0.3.8
   prettier: registry.npmjs.org/prettier/2.7.1
   tsup: registry.npmjs.org/tsup/6.2.3
 
@@ -23,14 +31,14 @@ packages:
     name: '@esbuild-kit/cjs-loader'
     version: 2.3.3
     dependencies:
-      '@esbuild-kit/core-utils': registry.npmjs.org/@esbuild-kit/core-utils/2.3.1
+      '@esbuild-kit/core-utils': registry.npmjs.org/@esbuild-kit/core-utils/2.3.2
       get-tsconfig: registry.npmjs.org/get-tsconfig/4.2.0
     dev: true
 
-  registry.npmjs.org/@esbuild-kit/core-utils/2.3.1:
-    resolution: {integrity: sha512-y2ThiUw/AkKCS7mIBF/EGce79aHIomOVFAIFmF5Z0DRZTNXVg9uFDXBkhAu7PAj64Po1ELfKJN9R7/zs3PIEAg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@esbuild-kit/core-utils/-/core-utils-2.3.1.tgz}
+  registry.npmjs.org/@esbuild-kit/core-utils/2.3.2:
+    resolution: {integrity: sha512-aQwy1Hdd02ymjyMyyrhtyuZGv5W+mVZmj3DTKFV0TnB1AUgMBV40tXySpsGySe8vLvSe0c0TaqTc2FUo8/YlNQ==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@esbuild-kit/core-utils/-/core-utils-2.3.2.tgz}
     name: '@esbuild-kit/core-utils'
-    version: 2.3.1
+    version: 2.3.2
     dependencies:
       esbuild: registry.npmjs.org/esbuild/0.15.8
       source-map-support: registry.npmjs.org/source-map-support/0.5.21
@@ -41,7 +49,7 @@ packages:
     name: '@esbuild-kit/esm-loader'
     version: 2.4.2
     dependencies:
-      '@esbuild-kit/core-utils': registry.npmjs.org/@esbuild-kit/core-utils/2.3.1
+      '@esbuild-kit/core-utils': registry.npmjs.org/@esbuild-kit/core-utils/2.3.2
       get-tsconfig: registry.npmjs.org/get-tsconfig/4.2.0
     dev: true
 
@@ -94,6 +102,12 @@ packages:
     dependencies:
       '@nodelib/fs.scandir': registry.npmjs.org/@nodelib/fs.scandir/2.1.5
       fastq: registry.npmjs.org/fastq/1.13.0
+    dev: true
+
+  registry.npmjs.org/@types/node/18.7.18:
+    resolution: {integrity: sha512-m+6nTEOadJZuTPkKR/SYK3A2d7FZrgElol9UP1Kae90VVU4a6mxnPuLiIW1m4Cq4gZ/nWb9GrdVXJCoCazDAbg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/@types/node/-/node-18.7.18.tgz}
+    name: '@types/node'
+    version: 18.7.18
     dev: true
 
   registry.npmjs.org/@types/vscode/1.71.0:
@@ -235,6 +249,18 @@ packages:
         optional: true
     dependencies:
       ms: registry.npmjs.org/ms/2.1.2
+    dev: true
+
+  registry.npmjs.org/defu/6.1.0:
+    resolution: {integrity: sha512-pOFYRTIhoKujrmbTRhcW5lYQLBXw/dlTwfI8IguF1QCDJOcJzNH1w+YFjxqy6BAuJrClTy6MUE8q+oKJ2FLsIw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/defu/-/defu-6.1.0.tgz}
+    name: defu
+    version: 6.1.0
+    dev: true
+
+  registry.npmjs.org/destr/1.1.1:
+    resolution: {integrity: sha512-QqkneF8LrYmwATMdnuD2MLI3GHQIcBnG6qFC2q9bSH430VTCDAVjcspPmUaKhPGtAtPAftIUFqY1obQYQuwmbg==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/destr/-/destr-1.1.1.tgz}
+    name: destr
+    version: 1.1.1
     dev: true
 
   registry.npmjs.org/dir-glob/3.0.1:
@@ -923,6 +949,12 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  registry.npmjs.org/pathe/0.3.8:
+    resolution: {integrity: sha512-c71n61F1skhj/jzZe+fWE9XDoTYjWbUwIKVwFftZ5IOgiX44BVkTkD+/803YDgR50tqeO4eXWxLyVHBLWQAD1g==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/pathe/-/pathe-0.3.8.tgz}
+    name: pathe
+    version: 0.3.8
+    dev: true
+
   registry.npmjs.org/picomatch/2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/picomatch/-/picomatch-2.3.1.tgz}
     name: picomatch
@@ -999,10 +1031,10 @@ packages:
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
     dev: true
 
-  registry.npmjs.org/rollup/2.79.0:
-    resolution: {integrity: sha512-x4KsrCgwQ7ZJPcFA/SUu6QVcYlO7uRLfLAy0DSA4NS2eG8japdbpM50ToH7z4iObodRYOJ0soneF0iaQRJ6zhA==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/rollup/-/rollup-2.79.0.tgz}
+  registry.npmjs.org/rollup/2.79.1:
+    resolution: {integrity: sha512-uKxbd0IhMZOhjAiD5oAFp7BqvkA4Dv47qpOCtaNvng4HBwdbWtdOh8f5nZNuk2rp51PMGk3bzfWu5oayNEuYnw==, registry: https://registry.yarnpkg.com/, tarball: https://registry.npmjs.org/rollup/-/rollup-2.79.1.tgz}
     name: rollup
-    version: 2.79.0
+    version: 2.79.1
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
@@ -1175,7 +1207,7 @@ packages:
       joycon: registry.npmjs.org/joycon/3.1.1
       postcss-load-config: registry.npmjs.org/postcss-load-config/3.1.4
       resolve-from: registry.npmjs.org/resolve-from/5.0.0
-      rollup: registry.npmjs.org/rollup/2.79.0
+      rollup: registry.npmjs.org/rollup/2.79.1
       source-map: registry.npmjs.org/source-map/0.8.0-beta.0
       sucrase: registry.npmjs.org/sucrase/3.27.0
       tree-kill: registry.npmjs.org/tree-kill/1.2.2
@@ -1191,7 +1223,7 @@ packages:
     hasBin: true
     dependencies:
       '@esbuild-kit/cjs-loader': registry.npmjs.org/@esbuild-kit/cjs-loader/2.3.3
-      '@esbuild-kit/core-utils': registry.npmjs.org/@esbuild-kit/core-utils/2.3.1
+      '@esbuild-kit/core-utils': registry.npmjs.org/@esbuild-kit/core-utils/2.3.2
       '@esbuild-kit/esm-loader': registry.npmjs.org/@esbuild-kit/esm-loader/2.4.2
     optionalDependencies:
       fsevents: registry.npmjs.org/fsevents/2.3.2
