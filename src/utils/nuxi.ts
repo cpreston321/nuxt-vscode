@@ -1,7 +1,10 @@
 import { execa } from "execa";
 import * as vscode from "vscode";
 
+import { rootDir, isNuxiLocal, createMessageWithLog } from ".";
+
 import type { NuxiCommand, NuxiAddCommand } from "../types";
+import type { ExecaReturnValue } from "execa";
 
 const openFileInCode = async (path: any) => {
   let doc = await vscode.workspace.openTextDocument(path);
@@ -31,9 +34,8 @@ export const useNuxiAddCommandInput = async ({
     });
 
     if (stdout.includes("Generated")) {
-      // use stdout and parse the file path and open it withing vscode.
       const filePath = stdout.split("\n")?.[1]?.match(/\/.*/g)?.[0];
-      const fileUri = vscode.Uri.file(filePath);
+      const fileUri = vscode.Uri.file(filePath as string);
 
       setTimeout(async () => {
         if (fileUri) {
@@ -41,37 +43,49 @@ export const useNuxiAddCommandInput = async ({
         }
       }, 1000);
 
-      vscode.window.showInformationMessage(
-        `Nuxt: Added ${name} "${input}" successfully!`
-      );
+      await createMessageWithLog({
+        message: `Added ${name} "${input}" successfully!`,
+        log: stdout,
+      });
     }
   } catch (error: any) {
     if (error?.stderr?.includes("File exists")) {
-      return vscode.window.showErrorMessage(
-        `[Error] Nuxt: File already exists! Couldn't add ${name}: "${input}"`
-      );
+      return await createMessageWithLog({
+        message: `File already exists!`,
+        type: "error",
+        log: error.stderr,
+      });
     }
 
-    vscode.window.showErrorMessage(
-      `[Error] Nuxt: Couldn't add ${name}: "${input}".`
-    );
+    await createMessageWithLog({
+      message: `Couldn't add ${name}: "${input}".`,
+      type: "error",
+      log: error.stderr,
+    });
   }
 };
 
 /**
  * `useNuxiCommand` - A Helper function to use Nuxi Add Command in CLI.
  *
- * @param name - The name of the main command to run
- * @param execaArgs - The arguments to pass to the command
+ * @param { name, execaArgs }
  */
 export const useNuxiCommand = async ({ name, execaArgs = [] }: NuxiCommand) => {
-  // Current Working Directory
-  const rootDir = vscode.workspace.workspaceFolders?.[0].uri.path;
-  const execaOuput = await execa("npx", ["nuxi", name, ...execaArgs], {
-    cwd: rootDir,
-    preferLocal: true,
-    stdio: "pipe",
-  });
+  let output: ExecaReturnValue;
+  
+  if (isNuxiLocal()) {
+    output = await execa("nuxi", [name, ...execaArgs], {
+      cwd: rootDir,
+      preferLocal: true,
+      stdio: "pipe",
+    });
+  } else {
+    output = await execa("npx", ["nuxi", name, ...execaArgs], {
+      cwd: rootDir,
+      preferLocal: true,
+      stdio: "pipe",
+    });
+  }
 
-  return execaOuput;
+  return output;
 };

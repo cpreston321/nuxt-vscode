@@ -1,5 +1,10 @@
-// UTILS
-export { log as logger } from "./log";
-export { defineCommandContext, defineCommand } from "./commands";
-export { useInputBox, useToggleSelect } from "./inputs";
-export { useNuxiCommand, useNuxiAddCommandInput } from "./nuxi";
+// VSCODE
+export * as vscode from 'vscode';
+
+// MAIN UTILS
+export { log as logger, createMessageWithLog } from "./log";
+
+export * from "./commands";
+export * from "./inputs";
+export * from "./nuxi";
+export * from "./pkg";

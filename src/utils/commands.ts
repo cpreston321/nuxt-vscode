@@ -1,6 +1,8 @@
 import * as vscode from "vscode";
 import { commandName } from "../../package.json";
 
+import { hasNuxtConfig } from "./pkg";
+
 import type { Disposable, ExtensionContext } from "vscode";
 
 const commands = [
@@ -13,6 +15,7 @@ const commands = [
   "addMiddleware",
   "addApi",
   "addPage",
+  "typecheck",
   "upgrade",
 ] as const;
 
@@ -28,6 +31,10 @@ export const defineCommandContext = (
   ext: ExtensionContext,
   commands: Disposable[]
 ) => {
+  // Set Context for so it doesn't show up for `editor/context` menu
+  // if not a Nuxt project
+  vscode.commands.executeCommand('setContext', 'ext.hasNuxtConfig', hasNuxtConfig());
+
   ext.subscriptions.push(...commands);
 };
 
@@ -55,10 +62,17 @@ export const defineCommand = (
 ): Disposable => {
   return vscode.commands.registerCommand(
     `${commandName}.${command}`,
-    async () =>
+    async () =>{
+      // Make sure they have a Nuxt Project
+      if (!hasNuxtConfig()) {
+        return vscode.window.showErrorMessage(
+          "[Error] Nuxt: Couldn't find 'nuxt.config' within the workspace.\nAre you sure this is a Nuxt project?"
+        );
+      }
+
       await cb({
         name: command.replace("add", "").toLowerCase(),
         command: command,
       })
-  );
+  });
 };

@@ -31,3 +31,10 @@ export interface NuxiCommand {
   name: string;
   execaArgs?: string[];
 }
+
+export type ShowMessageTypes = "info" | "error" | "warning";
+export interface ShowMessageWithLog {
+  message: string;
+  type?: ShowMessageTypes;
+  log?: string;
+}
