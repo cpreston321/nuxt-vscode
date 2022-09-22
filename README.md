@@ -47,13 +47,6 @@
 ## Prerequisites
 
 - [VS Code](https://code.visualstudio.com/) `v1.71.0 or greater`
-- [Nuxi CLI](https://v3.nuxtjs.org/api/commands/add/) `latest`
-
-Install Nuxi CLI Globally
-
-```bash
-npm i -g nuxi
-```
 
 ## Features
 
@@ -72,7 +65,8 @@ A command pallet of commands to run in addition to adding to the `explorer` cont
 - [x] `Nuxt: Add Middleware` - Add custom middleware to the project.
 - [x] `Nuxt: Add API Endpoint` - Adds a API endpoint to your project
 - [x] `Nuxt: Add Page` - Adds a page to your project
-- [x] `Nuxt: Upgrade Latest Version` - Upgrade to the latest version of Nuxt
+- [ ] `Nuxt: Typecheck` - WIP ⚠️
+- [x] `Nuxt: Upgrade` - Upgrade to the latest version of Nuxt
 
 ## 💻 Development
 
