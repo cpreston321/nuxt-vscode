@@ -18,7 +18,7 @@
 		</div>
 	</div>
 </div> -->
-![[cover image](/preview/cover.png og:image="./preview/cover.png" alt="Cover Image" width="100%")]
+<img src="./preview/cover.png" alt="Cover Image" width="100%" />
 
 <h1 align="center">(unofficial) nuxt-vscode</h1>
 
