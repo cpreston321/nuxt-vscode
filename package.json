@@ -3,9 +3,9 @@
   "name": "nuxt-vscode",
   "icon": "preview/logo.png",
   "commandName": "nuxt-vscode",
-  "displayName": "Nuxt (un-official)",
-  "description": "Making Nuxt development way easier with VS Code by extending `nuxi` commands.",
-  "version": "0.0.1",
+  "displayName": "Nuxt (unofficial)",
+  "description": "Making Nuxt development way easier with VS Code by extending nuxi commands.",
+  "version": "0.0.2",
   "main": "./dist/index.js",
   "engines": {
     "vscode": "^1.71.0"
@@ -22,79 +22,88 @@
     "Other"
   ],
   "activationEvents": [
-    "workspaceContains:**/{nuxt.config.*,package.json}"
+    "workspaceContains:**/nuxt.config.*",
+    "workspaceContains:**/package.json"
   ],
   "contributes": {
     "commands": [
       {
-        "title": "Nuxt: Add Component",
+        "title": "Add Component",
+        "category": "✨ Nuxt",
         "command": "nuxt-vscode.addComponent"
       },
       {
-        "title": "Nuxt: Add Composable",
+        "title": "Add Composable",
+        "category": "✨ Nuxt",
         "command": "nuxt-vscode.addComposable"
       },
       {
-        "title": "Nuxt: Add Layout",
+        "title": "Add Layout",
+        "category": "✨ Nuxt",
         "command": "nuxt-vscode.addLayout"
       },
       {
-        "title": "Nuxt: Add Plugin",
+        "title": "Add Plugin",
+        "category": "✨ Nuxt",
         "command": "nuxt-vscode.addPlugin"
       },
       {
         "title": "Nuxt: Add Middleware",
+        "category": "✨ Nuxt",
         "command": "nuxt-vscode.addMiddleware"
       },
       {
-        "title": "Nuxt: Add API Endpoint",
+        "title": "Add API Endpoint",
+        "category": "✨ Nuxt",
         "command": "nuxt-vscode.addApi"
       },
       {
-        "title": "Nuxt: Add Page",
+        "title": "Add Page",
+        "category": "✨ Nuxt",
         "command": "nuxt-vscode.addPage"
       },
       {
-        "title": "Nuxt: Upgrade Latest Version",
-        "command": "nuxt-vscode.upgrade"
+        "title": "Upgrade",
+        "command": "nuxt-vscode.upgrade",
+        "category": "⚙️ Nuxt Utilities"
       }
     ],
     "menus": {
       "explorer/context": [
         {
-          "when": "explorerResourceIsFolder && resourceFilename == 'components'",
+          "when": "ext.hasNuxtConfig && explorerResourceIsFolder && resourceFilename == 'components'",
           "command": "nuxt-vscode.addComponent",
-          "group": "navigation"
+          "group": "2_workspace"
         },
         {
-          "when": "explorerResourceIsFolder && resourceFilename == 'layout'",
+          "when": "ext.hasNuxtConfig && explorerResourceIsFolder && resourceFilename == 'layout'",
           "command": "nuxt-vscode.addLayout",
-          "group": "navigation"
+          "group": "2_workspace"
         },
         {
-          "when": "explorerResourceIsFolder && resourceFilename == 'plugins'",
+          "when": "ext.hasNuxtConfig && explorerResourceIsFolder && resourceFilename == 'plugins'",
           "command": "nuxt-vscode.addPlugin",
-          "group": "navigation"
+          "group": "2_workspace"
         },
         {
-          "when": "explorerResourceIsFolder && resourceFilename == 'composables'",
+          "when": "ext.hasNuxtConfig && explorerResourceIsFolder && resourceFilename == 'composables'",
           "command": "nuxt-vscode.addComposable",
-          "group": "navigation"
+          "group": "2_workspace"
         },
         {
-          "when": "explorerResourceIsFolder && resourceFilename == 'pages'",
+          "when": "ext.hasNuxtConfig && explorerResourceIsFolder && resourceFilename == 'pages'",
           "command": "nuxt-vscode.addPage",
-          "group": "navigation"
+          "group": "2_workspace"
         },
         {
-          "when": "explorerResourceIsFolder && resourceFilename == 'middleware'",
+          "when": "ext.hasNuxtConfig && explorerResourceIsFolder && resourceFilename == 'middleware'",
           "command": "nuxt-vscode.addMiddleware",
-          "group": "navigation"
+          "group": "2_workspace"
         },
         {
-          "when": "explorerResourceIsFolder && resourceFilename == 'api' || resourceFilename == 'server'",
+          "when": "ext.hasNuxtConfig && explorerResourceIsFolder && resourceFilename == 'api' || resourceFilename == 'server'",
           "command": "nuxt-vscode.addApi",
-          "group": "navigation"
+          "group": "2_workspace"
         }
       ]
     }
@@ -105,10 +114,14 @@
     "publish": "esno ./scripts/publish.ts"
   },
   "devDependencies": {
+    "@types/node": "^18.7.18",
     "@types/vscode": "^1.71.0",
+    "defu": "^6.1.0",
+    "destr": "^1.1.1",
     "esno": "^0.16.3",
     "execa": "^6.1.0",
     "jiti": "^1.16.0",
+    "pathe": "^0.3.8",
     "prettier": "^2.7.1",
     "tsup": "^6.2.3"
   }
