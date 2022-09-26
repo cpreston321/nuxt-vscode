@@ -1,29 +1,11 @@
-<!-- <div
-	class="relative bg-gradient-to-r from-[#255461] to-[#00DC82] h-full font-open-sans bg-cover bg-center p-2"
->
-	<div class="bg-white bg-opacity-90 rounded-md shadow-lg h-full p-7 flex flex-col justify-between">
-        <div>
-          <img :src="mainLogo" class="w-10"/>
-    	  <h1 class="text-4xl font-bold line-clamp-3 pb-1">{{ title }}</h1>
-          <p class="text-gray-700 italic">(un-official)</p>
-        </div>
-		<div class="mt-3 flex items-center justify-between">
-			<div class="flex items-center space-x-2 text-lg">
-				<img class="w-10 h-10 rounded-full" crossorigin="anonymous" :src="avatar" />
-				<span class="font-semibold">{{ author }}</span>
-			</div>
-			<div>
-				<img :src="logo" alt="logo" class="h-12" />
-			</div>
-		</div>
-	</div>
-</div> -->
 <img src="./preview/cover.png" alt="Cover Image" width="100%" />
 
 <h1 align="center">(unofficial) nuxt-vscode</h1>
 
+> This extension is not affiliated with Nuxt.js.
+
 <p align="center">
-  This uses <a href="https://v3.nuxtjs.org/api/commands/add/" target="_blank">nuxi</a> but makes it interactive and easy to use with a nuxt 3 project.
+  This Extension uses <a href="https://v3.nuxtjs.org/api/commands/add/" target="_blank">nuxi</a> but makes it interactive and easy to use with a nuxt 3 project within vscode.
 </p>
 
 <p align="center">
@@ -34,8 +16,6 @@
     <img src="https://vsmarketplacebadge.apphb.com/downloads-short/cpreston321.nuxt-vscode.svg?style=for-the-badge&colorA=5DDB61&colorB=4BC74F&label=DOWNLOADS"/>
   </a>
 </p>
-
-> Nuxi commands for vscode. This extension is not affiliated with Nuxt.js.
 
 ## Features
 
@@ -96,7 +76,7 @@ Contributions are what make the open source community such an amazing place to b
 
 [MIT](./LICENSE) License © 2022 [cpreston321](https://github.com/cpreston321)
 
-# 📧 Contact
+## 📧 Contact
 
 cpreston321 - [@cpreston321](https://twitter.com/cpreston321)
 
@@ -105,3 +85,31 @@ Also, if you like my work, please feel free to [buy me a coffee](https://www.buy
 <a href="https://www.buymeacoffee.com/cpreston321" target="_blank">
   <img src="https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png" alt="Logo" >
 </a>
+
+## 🔥 Contributors
+
+<a href="https://github.com/cpreston321/nuxt-vscode/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=cpreston321/nuxt-vscode" />
+</a>
+
+<!-- Banner Image -->
+<!-- <div
+	class="relative bg-gradient-to-r from-[#255461] to-[#00DC82] h-full font-open-sans bg-cover bg-center p-2"
+>
+	<div class="bg-white bg-opacity-90 rounded-md shadow-lg h-full p-7 flex flex-col justify-between">
+        <div>
+          <img :src="mainLogo" class="w-10"/>
+    	  <h1 class="text-4xl font-bold line-clamp-3 pb-1">{{ title }}</h1>
+          <p class="text-gray-700 italic">(un-official)</p>
+        </div>
+		<div class="mt-3 flex items-center justify-between">
+			<div class="flex items-center space-x-2 text-lg">
+				<img class="w-10 h-10 rounded-full" crossorigin="anonymous" :src="avatar" />
+				<span class="font-semibold">{{ author }}</span>
+			</div>
+			<div>
+				<img :src="logo" alt="logo" class="h-12" />
+			</div>
+		</div>
+	</div>
+</div> -->
