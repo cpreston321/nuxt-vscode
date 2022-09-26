@@ -76,7 +76,7 @@ Contributions are what make the open source community such an amazing place to b
 
 [MIT](./LICENSE) License © 2022 [cpreston321](https://github.com/cpreston321)
 
-## 📧 Contact
+# 📧 Contact
 
 cpreston321 - [@cpreston321](https://twitter.com/cpreston321)
 
@@ -86,7 +86,7 @@ Also, if you like my work, please feel free to [buy me a coffee](https://www.buy
   <img src="https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png" alt="Logo" >
 </a>
 
-## 🔥 Contributors
+# 🔥 Contributors
 
 <a href="https://github.com/cpreston321/nuxt-vscode/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=cpreston321/nuxt-vscode" />
