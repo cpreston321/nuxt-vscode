@@ -14,5 +14,5 @@
     "no-throw-literal": "warn",
     "semi": "off"
   },
-  "ignorePatterns": ["dist", "**/*.d.ts"]
+  "ignorePatterns": ["dist", "**/*.d.ts", "package.json", "package-lock.json"]
 }

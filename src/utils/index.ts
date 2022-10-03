@@ -8,3 +8,4 @@ export * from "./commands";
 export * from "./inputs";
 export * from "./nuxi";
 export * from "./pkg";
+export * from "./config";

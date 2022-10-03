@@ -2,16 +2,23 @@ import { displayName, version } from "../package.json";
 
 import commands from "./commands";
 import {
+  config,
   logger,
   rootDir,
   getNuxtVersion,
-  defineCommandContext,
+  defineCommandContext
 } from "./utils";
 
 import type { ExtensionContext } from "vscode";
 
 const activate = (ext: ExtensionContext) => {
   logger.appendLine(`${displayName} for VS Code v${version}\n`);
+  
+  const disabled = config?.get<boolean>('disable', false);
+  if (disabled) {
+    logger.appendLine('Disabled by configuration');
+    return;
+  }
 
   if (getNuxtVersion()) {
     logger.appendLine(`------- NUXT -----------`);

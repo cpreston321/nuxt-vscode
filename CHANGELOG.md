@@ -4,8 +4,6 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.0.4](https://github.com/cpreston321/nuxt-vscode/compare/v0.0.3...v0.0.4) (2022-10-03)
 
-## 0.0.4 (2022-10-03)
-
 ### ✨ Features
 
 - Project Settings for `Nuxt VSCode`
@@ -19,7 +17,7 @@ All notable changes to this project will be documented in this file. See [standa
 - Sanitize `input` values to strip out extentions (e.g. `Header.vue` -> `Header`).
   - Cleans up so you accidentally type wrong it will still create the file correctly.
 
-## 0.0.2 || 0.0.3 (2022-09-22)
+## [0.0.2 || 0.0.3](https://github.com/cpreston321/nuxt-vscode/compare/v0.0.1...v0.0.3) (2022-09-22)
 
 ### ⚡️ Improvements
 
