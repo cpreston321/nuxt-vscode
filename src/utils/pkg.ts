@@ -1,15 +1,18 @@
 import * as vscode from 'vscode';
-import { existsSync, readFileSync } from 'node:fs'
-import { createRequire } from 'node:module'
+import { existsSync, readFileSync } from 'node:fs';
+import { createRequire } from 'node:module';
 
-import destr from 'destr'
-import jiti from 'jiti'
-import { resolve, normalize } from 'pathe'
-import { logger } from '.';
+import destr from 'destr';
+import jiti from 'jiti';
+import { resolve, normalize } from 'pathe';
+import { config, logger } from '.';
 
-export const rootDir = vscode.workspace.workspaceFolders?.[0].uri.path;
-const _require = createRequire(rootDir as string)
+const rootConfigPath = () => config?.get<string>('root');
+const projectPath = vscode.workspace.workspaceFolders?.[0].uri.fsPath;
 
+export const rootDir = rootConfigPath() ? resolve(projectPath as string, rootConfigPath() as string) : projectPath;
+
+const _require = createRequire(rootDir as string);
 function getModulePaths (paths?: string | string[]): string[] {
   return ([] as Array<string | undefined>)
     .concat(
@@ -20,43 +23,43 @@ function getModulePaths (paths?: string | string[]): string[] {
       // main paths
       paths
     )
-    .filter(Boolean) as string[]
+    .filter(Boolean) as string[];
 }
 
 function resolveModule (id: string, paths?: string | string[]) {
-  return normalize(_require.resolve(id, { paths: getModulePaths(paths) }))
+  return normalize(_require.resolve(id, { paths: getModulePaths(paths) }));
 }
 
 function tryResolveWorkspaceModule (id: string) {
   try {
-    return resolveModule(id, rootDir)
-  } catch { return null }
+    return resolveModule(id, rootDir);
+  } catch { return null; }
 }
 
 function readJSONSync (filePath: string) {
   try {
-    return destr(readFileSync(filePath, 'utf-8'))
+    return destr(readFileSync(filePath, 'utf-8'));
   } catch (err) {
     // TODO: Warn error
-    return null
+    return null;
   }
 }
 
 // TODO make a deep search for all workspace dirs and find the nuxt project.
 export const isNuxiLocal = () => Boolean(tryResolveWorkspaceModule('nuxi'));
 export const getNuxtVersion = () => {
-  const pkg = readJSONSync(resolve(rootDir as string, 'package.json'))
-  return pkg?.dependencies?.nuxt || pkg?.devDependencies?.nuxt
-}
-export const hasNuxtConfig = () => existsSync(resolve(rootDir as string, 'nuxt.config.ts')) || existsSync(resolve(rootDir as string, 'nuxt.config.js'))
+  const pkg = readJSONSync(resolve(rootDir as string, 'package.json'));
+  return pkg?.dependencies?.nuxt || pkg?.devDependencies?.nuxt;
+};
+export const hasNuxtConfig = () => existsSync(resolve(rootDir as string, 'nuxt.config.ts')) || existsSync(resolve(rootDir as string, 'nuxt.config.js'));
 export function getNuxtConfig () {
   try {
-    (globalThis as any).defineNuxtConfig = (c: any) => c
-    const config = jiti(resolve(rootDir as string), { interopDefault: true, esmResolve: true })('./nuxt.config')
-    delete (globalThis as any).defineNuxtConfig
-    return config
+    (globalThis as any).defineNuxtConfig = (c: any) => c;
+    const config = jiti(resolve(rootDir as string), { interopDefault: true, esmResolve: true })('./nuxt.config');
+    delete (globalThis as any).defineNuxtConfig;
+    return config;
   } catch (err: any) {
-    logger.appendLine(err)
-    return {}
+    logger.appendLine(err);
+    return {};
   }
 }

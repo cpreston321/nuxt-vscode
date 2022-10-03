@@ -26,9 +26,9 @@
 
 ## Prerequisites
 
-- [VS Code](https://code.visualstudio.com/) `v1.71.0 or greater`
+- [VS Code](https://code.visualstudio.com/) `^v1.71.0`
 
-## Features
+## Feature Examples
 
 A command pallet of commands to run in addition to adding to the `explorer` context menu for the certain folders that drive the commands.
 
