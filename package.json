@@ -5,7 +5,7 @@
   "commandName": "nuxt-vscode",
   "displayName": "Nuxt (unofficial)",
   "description": "Making Nuxt development way easier with VS Code by extending nuxi commands.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "./dist/index.js",
   "engines": {
     "vscode": "^1.71.0"
@@ -26,6 +26,21 @@
     "workspaceContains:**/package.json"
   ],
   "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Nuxt VS Code (unofficial)",
+      "properties": {
+        "nuxt-vscode.disable": {
+          "type": "boolean",
+          "default": false,
+          "description": "Disable the Nuxt VS Code extension"
+        },
+        "nuxt-vscode.root": {
+          "type": "string",
+          "description": "Project root that contains the nuxt config file. (Relative to workspace root)"
+        }
+      }
+    },
     "commands": [
       {
         "title": "Add Component",
@@ -116,6 +131,8 @@
   "devDependencies": {
     "@types/node": "^18.7.18",
     "@types/vscode": "^1.71.0",
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
+    "@typescript-eslint/parser": "^5.38.1",
     "defu": "^6.1.0",
     "destr": "^1.1.1",
     "esno": "^0.16.3",
