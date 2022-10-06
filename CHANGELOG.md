@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/cpreston321/nuxt-vscode/compare/v0.0.4...v0.0.5) (2022-10-06)
+
+
+### Features
+
+* 0.0.4 Release ([2f02d1e](https://github.com/cpreston321/nuxt-vscode/commit/2f02d1ef33e692c50351fdf28544597edb375105))
+
 ### [0.0.4](https://github.com/cpreston321/nuxt-vscode/compare/v0.0.3...v0.0.4) (2022-10-03)
 
 ### ✨ Features

@@ -5,7 +5,7 @@
   "commandName": "nuxt-vscode",
   "displayName": "Nuxt (unofficial)",
   "description": "Making Nuxt development way easier with VS Code by extending nuxi commands.",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "./dist/index.js",
   "engines": {
     "vscode": "^1.71.0"
@@ -63,7 +63,7 @@
         "command": "nuxt-vscode.addPlugin"
       },
       {
-        "title": "Nuxt: Add Middleware",
+        "title": "Add Middleware",
         "category": "✨ Nuxt",
         "command": "nuxt-vscode.addMiddleware"
       },
@@ -91,7 +91,7 @@
           "group": "2_workspace"
         },
         {
-          "when": "ext.hasNuxtConfig && explorerResourceIsFolder && resourceFilename == 'layout'",
+          "when": "ext.hasNuxtConfig && explorerResourceIsFolder && resourceFilename == 'layouts'",
           "command": "nuxt-vscode.addLayout",
           "group": "2_workspace"
         },
