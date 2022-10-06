@@ -1,12 +1,11 @@
 <img src="./preview/cover.png" alt="Cover Image" width="100%" />
 
-<h1 align="center">(unofficial) nuxt-vscode</h1>
-
-> This extension is not affiliated with Nuxt.js.
+<h1 align="center">nuxt-vscode (unofficial)</h1>
 
 <p align="center">
   This Extension uses <a href="https://v3.nuxtjs.org/api/commands/add/" target="_blank">nuxi</a> but makes it interactive and easy to use with a nuxt 3 project within vscode.
 </p>
+
 
 <p align="center">
   <a href="https://marketplace.visualstudio.com/items?itemName=cpreston321.nuxt-vscode#review-details">
@@ -17,6 +16,12 @@
   </a>
 </p>
 
+> This extension is not affiliated with Nuxt.js.
+
+## Prerequisites
+
+- [VS Code](https://code.visualstudio.com/) `^v1.71.0`
+
 ## Features
 
 - 📖 Open Source
@@ -24,17 +29,21 @@
 - ✨ Nuxi built into **VS Code**.
 - Full Typescript Support
 
-## Prerequisites
+## Feature Previews
 
-- [VS Code](https://code.visualstudio.com/) `^v1.71.0`
+A command pallet of commands to run in addition to adding to the `explorer` context menu for the certain folders that drive the commands. Checkout out the previews below!
 
-## Feature Examples
-
-A command pallet of commands to run in addition to adding to the `explorer` context menu for the certain folders that drive the commands.
+### Command Pallet
 
 ![command pallet](./preview/command-pallet.png)
 
-![context menu](./preview/context-menu.png)
+### Context Menus
+
+|       |     |       |
+| :---:       |    :----:   |          :---: |
+| ![component context menu](./preview/context-menu/component.png) | ![compoasable context menu](./preview/context-menu/composable.png) |  ![layout context menu](./preview/context-menu/layout.png) |
+| ![middleware context menu](./preview/context-menu/middleware.png) | ![plugin context menu](./preview/context-menu/plugin.png) |  ![page context menu](./preview/context-menu/page.png) |
+| ![server context menu](./preview/context-menu/server.png)| | |
 
 ---
 
