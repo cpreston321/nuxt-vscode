@@ -39,11 +39,12 @@ A command pallet of commands to run in addition to adding to the `explorer` cont
 
 ### Context Menus
 
-|       |     |       |
-| :---:       |    :----:   |          :---: |
-| ![component context menu](./preview/context-menu/component.png) | ![compoasable context menu](./preview/context-menu/composable.png) |  ![layout context menu](./preview/context-menu/layout.png) |
-| ![middleware context menu](./preview/context-menu/middleware.png) | ![plugin context menu](./preview/context-menu/plugin.png) |  ![page context menu](./preview/context-menu/page.png) |
-| ![server context menu](./preview/context-menu/server.png)| | |
+|       |     |
+| :---:       |    :----:  
+| ![component context menu](./preview/context-menu/component.png) | ![compoasable context menu](./preview/context-menu/composable.png) |  
+|![layout context menu](./preview/context-menu/layout.png) | ![middleware context menu](./preview/context-menu/middleware.png) |
+| ![plugin context menu](./preview/context-menu/plugin.png) | ![page context menu](./preview/context-menu/page.png) |
+| ![server context menu](./preview/context-menu/server.png) | |
 
 ---
 
