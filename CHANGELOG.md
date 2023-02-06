@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/cpreston321/nuxt-vscode/compare/v0.0.5...v0.0.6) (2023-02-05)
+
+### ✨ Features
+
+- **feat(commands)** - 🆕 `Nuxt: Prepare Types` - same as running `nuxi prepare` in the terminal.
+- **feat(commands)** - 🆕 `Nuxt: Info` - same as running `nuxi info` in the terminal and will copy info automatically to clipboard.
+- **feat(settings)** - 🆕 `Nuxt Commands Upgrade Run Prepare` - Run prepare on upgrade. This can be disabled if you don't want to run `nuxi prepare` on upgrade.
+  - Default: `true`
+
+### ⚡️ Improvements
+
+- **chore**: update dependencies
+- **chore**: lint fixes
+
 ### [0.0.5](https://github.com/cpreston321/nuxt-vscode/compare/v0.0.4...v0.0.5) (2022-10-06)
 
 
