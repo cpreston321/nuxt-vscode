@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 - **feat(commands)** - 🆕 `Nuxt: Prepare Types` - same as running `nuxi prepare` in the terminal.
 - **feat(commands)** - 🆕 `Nuxt: Info` - same as running `nuxi info` in the terminal and will copy info automatically to clipboard.
-- **feat(settings)** - 🆕 `Nuxt Commands Upgrade Run Prepare` - Run prepare on upgrade. This can be disabled if you don't want to run `nuxi prepare` on upgrade.
+- **feat(settings)** - 🆕 `Nuxt Commands Upgrade Run Prepare` - Run prepare after upgrade. This can be disabled if you don't want to run `nuxi prepare` on upgrade.
   - Default: `true`
 
 ### ⚡️ Improvements
