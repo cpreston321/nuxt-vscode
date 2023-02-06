@@ -14,7 +14,7 @@ async function publish() {
   pkg.name = 'nuxt-vscode';
   await fs.writeJSON(pkgPath, pkg, { spaces: 2 });
 
-  await execa('pnpm', ['run', 'build'], { cwd: root, stdio: 'inherit' });
+  await execa('pnpm', ['build'], { cwd: root, stdio: 'inherit' });
 
   try {
     console.log('\nPublish to VSCE...\n');
