@@ -16,4 +16,4 @@ export default defineCommand("addPlugin", async ({ name }) => {
     name,
     input,
   });
-})
+});

@@ -14,9 +14,9 @@ import type { ExtensionContext } from "vscode";
 const activate = (ext: ExtensionContext) => {
   logger.appendLine(`${displayName} for VS Code v${version}\n`);
   
-  const disabled = config?.get<boolean>('disable', false);
+  const disabled = config().get('disabled', false);
   if (disabled) {
-    logger.appendLine('Disabled by configuration');
+    logger.appendLine('Nuxt Extention is disabled by configuration property. Please enable it to use it.');
     return;
   }
 

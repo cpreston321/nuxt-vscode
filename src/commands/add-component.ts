@@ -19,4 +19,4 @@ export default defineCommand("addComponent", async ({ name }) => {
     name,
     input,
   });
-})
+});

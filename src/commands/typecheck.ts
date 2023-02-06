@@ -39,5 +39,5 @@ export default defineCommand("typecheck", async () => {
     return await createMessageWithLog({
       message: `Typecheck Success!`,
     });
-  })
+  });
 });

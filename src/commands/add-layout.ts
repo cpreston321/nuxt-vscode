@@ -16,4 +16,4 @@ export default defineCommand("addLayout", async ({ name }) => {
     name,
     input,
   });
-})
+});
