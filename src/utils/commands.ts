@@ -16,7 +16,9 @@ const commands = [
   "addApi",
   "addPage",
   "typecheck",
+  "info",
   "upgrade",
+  "prepare",
 ] as const;
 
 type CommandsList = typeof commands[number];
@@ -31,8 +33,8 @@ export const defineCommandContext = (
   ext: ExtensionContext,
   commands: Disposable[]
 ) => {
-  // Set Context for so it doesn't show up for `editor/context` menu
   // if not a Nuxt project
+  // Set Context for so it doesn't show up for `editor/context` menu
   vscode.commands.executeCommand('setContext', 'ext.hasNuxtConfig', hasNuxtConfig());
 
   ext.subscriptions.push(...commands);
@@ -73,6 +75,6 @@ export const defineCommand = (
       await cb({
         name: command.replace("add", "").toLowerCase(),
         command: command,
-      })
+      });
   });
 };

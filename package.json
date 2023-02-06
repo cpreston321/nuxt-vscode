@@ -4,7 +4,7 @@
   "icon": "preview/logo.png",
   "commandName": "nuxt-vscode",
   "displayName": "Nuxt (unofficial)",
-  "description": "Making Nuxt development way easier with VS Code by extending nuxi commands.",
+  "description": "Making Nuxt development way easier with VSCode by extending nuxi cli commands.",
   "version": "0.0.5",
   "main": "./dist/index.js",
   "engines": {
@@ -28,7 +28,7 @@
   "contributes": {
     "configuration": {
       "type": "object",
-      "title": "Nuxt VS Code (unofficial)",
+      "title": "Nuxt Unofficial",
       "properties": {
         "nuxt-vscode.disable": {
           "type": "boolean",
@@ -37,7 +37,13 @@
         },
         "nuxt-vscode.root": {
           "type": "string",
+          "default": ".",
           "description": "Project root that contains the nuxt config file. (Relative to workspace root)"
+        },
+        "nuxt-vscode.commands.upgrade.runPrepare": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "After running the `Nuxt Upgrade` command -- it will automatically run `nuxi prepare` command if successful."
         }
       }
     },
@@ -79,8 +85,18 @@
       },
       {
         "title": "Upgrade",
-        "command": "nuxt-vscode.upgrade",
-        "category": "⚙️ Nuxt Utilities"
+        "category": "⚙️ Nuxt Utilities",
+        "command": "nuxt-vscode.upgrade"
+      },
+      {
+        "title": "Prepare types",
+        "category": "⚙️ Nuxt Utilities",
+        "command": "nuxt-vscode.prepare"
+      },
+      {
+        "title": "Info",
+        "category": "⚙️ Nuxt Utilities",
+        "command": "nuxt-vscode.info"
       }
     ],
     "menus": {
@@ -126,20 +142,23 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch src",
+    "lint": "eslint --ext .ts .",
+    "lint:fix": "eslint --ext .ts . --fix",
     "publish": "esno ./scripts/publish.ts"
   },
   "devDependencies": {
-    "@types/node": "^18.7.18",
-    "@types/vscode": "^1.71.0",
-    "@typescript-eslint/eslint-plugin": "^5.38.1",
-    "@typescript-eslint/parser": "^5.38.1",
-    "defu": "^6.1.0",
-    "destr": "^1.1.1",
+    "@types/node": "^18.11.19",
+    "@types/vscode": "^1.75.0",
+    "@typescript-eslint/eslint-plugin": "^5.50.0",
+    "@typescript-eslint/parser": "^5.50.0",
+    "defu": "^6.1.2",
+    "destr": "^1.2.2",
+    "eslint": "^8.33.0",
     "esno": "^0.16.3",
     "execa": "^6.1.0",
-    "jiti": "^1.16.0",
-    "pathe": "^0.3.8",
-    "prettier": "^2.7.1",
-    "tsup": "^6.2.3"
+    "jiti": "^1.16.2",
+    "pathe": "^1.1.0",
+    "prettier": "^2.8.3",
+    "tsup": "^6.5.0"
   }
 }

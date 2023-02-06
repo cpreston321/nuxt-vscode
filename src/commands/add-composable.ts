@@ -16,4 +16,4 @@ export default defineCommand("addComposable", async ({ name }) => {
     name,
     input,
   });
-})
+});

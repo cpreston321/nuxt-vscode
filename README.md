@@ -1,22 +1,27 @@
-<img src="./preview/cover.png" alt="Cover Image" width="100%" />
+<img src="./preview/cover.png" alt="Nuxt VSCode Cover Image" width="100%" />
 
-<h1 align="center">nuxt-vscode (unofficial)</h1>
+<h1 align="center">Nuxt VSCode (unofficial)</h1>
 
-<p align="center">
-  This Extension uses <a href="https://v3.nuxtjs.org/api/commands/add/" target="_blank">nuxi</a> but makes it interactive and easy to use with a nuxt 3 project within vscode.
-</p>
-
+> This extension is **not** affiliated with Nuxt.js.
 
 <p align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=cpreston321.nuxt-vscode#review-details">
-    <img src="https://vsmarketplacebadge.apphb.com/rating-star/cpreston321.nuxt-vscode.svg?style=for-the-badge&colorA=FBBD30&colorB=F2AA08"/>
-  </a> 
-  <a href="https://marketplace.visualstudio.com/items?itemName=cpreston321.nuxt-vscode">
-    <img src="https://vsmarketplacebadge.apphb.com/downloads-short/cpreston321.nuxt-vscode.svg?style=for-the-badge&colorA=5DDB61&colorB=4BC74F&label=DOWNLOADS"/>
-  </a>
+  This Extension uses <a href="https://nuxt.com/docs/api/commands/add" target="_blank">nuxi</a> but makes it interactive and easy to use with a nuxt 3 project within vscode.
 </p>
 
-> This extension is not affiliated with Nuxt.js.
+<p align="center">
+    <a href="https://marketplace.visualstudio.com/items?itemName=cpreston321.nuxt-vscode">
+      <img src="https://vsmarketplacebadges.dev/version-short/cpreston321.nuxt-vscode.svg?style=for-the-badge&amp;colorA=252526&amp;colorB=00dc82&amp;label=VERSION" alt="Version">
+    </a>
+    <a href="https://marketplace.visualstudio.com/items?itemName=cpreston321.nuxt-vscode#review-details">
+      <img src="https://vsmarketplacebadges.dev/rating-short/cpreston321.nuxt-vscode.svg?style=for-the-badge&amp;colorA=252526&amp;colorB=00dc82&amp;label=Rating" alt="Rating">
+    </a>
+    <a href="https://marketplace.visualstudio.com/items?itemName=cpreston321.nuxt-vscode">
+      <img src="https://vsmarketplacebadges.dev/installs-short/cpreston321.nuxt-vscode.svg?style=for-the-badge&amp;colorA=252526&amp;colorB=00dc82&amp;label=Installs" alt="Installs">
+    </a>
+    <a href="https://marketplace.visualstudio.com/items?itemName=cpreston321.nuxt-vscode">
+      <img src="https://vsmarketplacebadges.dev/downloads-short/cpreston321.nuxt-vscode.svg?style=for-the-badge&amp;colorA=252526&amp;colorB=00dc82&amp;label=Downloads" alt="Downloads">
+    </a>
+</p>
 
 ## Prerequisites
 
@@ -55,8 +60,10 @@ A command pallet of commands to run in addition to adding to the `explorer` cont
 - [x] `Nuxt: Add Middleware` - Add custom middleware to the project.
 - [x] `Nuxt: Add API Endpoint` - Adds a API endpoint to your project
 - [x] `Nuxt: Add Page` - Adds a page to your project
-- [ ] `Nuxt: Typecheck` - WIP ⚠️
+- [x] `Nuxt: Info` - Copies the nuxt info to your clipboard
+- [x] `Nuxt: Prepare Types` - Generates types in the `.nuxt/` folder
 - [x] `Nuxt: Upgrade` - Upgrade to the latest version of Nuxt
+- [ ] `Nuxt: Typecheck` - WIP ⚠️
 
 ## 💻 Development
 

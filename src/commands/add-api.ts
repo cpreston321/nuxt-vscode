@@ -26,4 +26,4 @@ export default defineCommand("addApi", async ({ name }) => {
       ...(method && method !== "default" ? ["--method", method] : []),
     ],
   });
-})
+});

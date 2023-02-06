@@ -4,7 +4,6 @@ import * as vscode from "vscode";
 import { rootDir, isNuxiLocal, createMessageWithLog } from ".";
 
 import type { NuxiCommand, NuxiAddCommand } from "../types";
-import type { ExecaReturnValue } from "execa";
 
 const openFileInCode = async (path: any) => {
   let doc = await vscode.workspace.openTextDocument(path);
@@ -49,16 +48,14 @@ export const useNuxiAddCommandInput = async ({
       });
     }
   } catch (error: any) {
+    let message = `Couldn't add ${name}: "${input}".`;
+    
     if (error?.stderr?.includes("File exists")) {
-      return await createMessageWithLog({
-        message: `File already exists!`,
-        type: "error",
-        log: error.stderr,
-      });
+      message = `Couldn't add ${name}: "${input}". Already exists!`;
     }
 
     await createMessageWithLog({
-      message: `Couldn't add ${name}: "${input}".`,
+      message,
       type: "error",
       log: error.stderr,
     });
@@ -71,21 +68,15 @@ export const useNuxiAddCommandInput = async ({
  * @param { name, execaArgs }
  */
 export const useNuxiCommand = async ({ name, execaArgs = [] }: NuxiCommand) => {
-  let output: ExecaReturnValue;
-  
+  let nuxiCommand = "npx nuxi";
+
   if (isNuxiLocal()) {
-    output = await execa("nuxi", [name, ...execaArgs], {
-      cwd: rootDir,
-      preferLocal: true,
-      stdio: "pipe",
-    });
-  } else {
-    output = await execa("npx", ["nuxi", name, ...execaArgs], {
-      cwd: rootDir,
-      preferLocal: true,
-      stdio: "pipe",
-    });
+    nuxiCommand = "nuxi";
   }
 
-  return output;
+  return await execa(nuxiCommand, [name, ...execaArgs], {
+    cwd: rootDir,
+    preferLocal: true,
+    stdio: "pipe",
+  });
 };

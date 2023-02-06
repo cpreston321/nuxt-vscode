@@ -26,4 +26,4 @@ export default defineCommand("addMiddleware", async ({ name }) => {
       ...(isGlobal && isGlobal !== "default" ? ["--global"] : []),
     ],
   });
-})
+});

@@ -6,6 +6,8 @@ import addMiddleware from './add-middleware';
 import addPage from './add-page';
 import addPlugin from './add-plugin';
 import typecheck from './typecheck';
+import prepare from './prepare';
+import info from './info';
 import upgrade from './upgrade';
 
 export default [
@@ -17,5 +19,7 @@ export default [
   addPage,
   addPlugin,
   typecheck,
+  info,
+  prepare,
   upgrade,
 ];

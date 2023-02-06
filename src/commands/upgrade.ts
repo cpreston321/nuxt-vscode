@@ -1,5 +1,6 @@
 import * as vscode from "vscode";
 import {
+  config,
   defineCommand,
   useNuxiCommand,
   useToggleSelect,
@@ -9,6 +10,7 @@ import {
 import type { Progress } from "vscode";
 
 export default defineCommand("upgrade", async ({ name }) => {
+  const runPrepare = config('upgrade.commands').get('runPrepare', true);
   const force = await useToggleSelect(["yes", "no"], {
     title: "Force Upgrade?",
     placeHolder: "e.g. 'no'",
@@ -35,22 +37,35 @@ export default defineCommand("upgrade", async ({ name }) => {
       });
     }
   }).then(async (stdout: any) => {
+    let logObj = {
+      message: "upgrading nuxt failed.",
+      type: "error"
+    } as {
+      message: string;
+      type: "info" | "error";
+    };
+    
     if (stdout.includes("Successfully")) {
-      return await createMessageWithLog({
-        message: `upgraded successfully.`, 
-        log: stdout
-      });
+      logObj = {
+        message: `upgraded to latest version of Nuxt 3!`,
+        type: "info"
+      };
     } else if (stdout.includes("already using")) {
-      return await createMessageWithLog({
-        message: `Already using latest version!`, 
-        log: stdout
-      });
+      logObj = {
+        message: `already using latest version!`,
+        type: "info"
+      };
+    }
+
+    // Run Nuxi Prepare if set globally in settings
+    if (runPrepare && logObj.type === "info") {
+      vscode.commands.executeCommand("nuxt.prepare");
     }
 
     await createMessageWithLog({
-      message: `Couldn't upgrade Nuxt.`, 
-      type: "error",
+      message: logObj.message, 
+      type: logObj.type,
       log: stdout
     });
-  })
+  });
 });
